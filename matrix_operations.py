@@ -2,7 +2,7 @@ import numpy as np
 class Matrix:
     def __init__(self,out=0):
         self.out = out
-    def add(self,mat1,mat2,row=-1,column=-1):
+    def add(self,mat1,mat2):
         if(np.shape(mat1)==np.shape(mat2)):
             result = [[mat1[i][j] + mat2[i][j] for j in range(len(mat1[0]))] for i in range(len(mat1))]
             self.out = result
