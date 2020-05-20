@@ -119,9 +119,12 @@ class Matrix:
         Returns:
             array: determinant of the matrix
         """
-        result = np.linalg.det(mat)
-        self.determinant = result
-        return self.determinant
+        if(len(mat[0])==len(mat)):
+            result = np.linalg.det(mat)
+            self.determinant = result
+            return self.determinant
+        else:
+            print("Not a square Matrix")
     def get_element(self,mat,row,column):
         """Method to get an element of a matrix
         Args:
@@ -141,20 +144,4 @@ class Matrix:
         """
         result = np.shape(mat)
         self.dimensions = result
-        return self.dimensions         
-
-X = [[12,7,3],
-    [4 ,5,6],
-    [7 ,8,9]]
-
-Y = [[5,8,1],
-    [6,7,3],
-    [4,5,9]]  
-Z = 5  
-m = Matrix()
-print(m.det(X))
-
-
-
-        
-
+        return self.dimensions
